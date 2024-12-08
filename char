@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cctype>
+using namespace std;
+
+int main() {
+    //create char and get user input
+    char name[50]; 
+    cout << "Enter your name: ";
+    cin.getline(name, 50);
+
+//if letter and for loop to repeat
+    for (int i = 0; name[i] != '\0'; ++i) {
+        if (isalpha(name[i])) {
+            name[i] = toupper(name[i]); 
+            //if not a letter
+        } else if (!isspace(name[i])) {
+
+            cout << "Thats wrong pal type letters" << endl;
+            return 1;
+        }
+    }
+//if correct
+    cout << "Your name in uppercase: " << name << endl;
+
+    return 0;
+}
